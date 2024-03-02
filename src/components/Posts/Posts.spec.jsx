@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { Posts } from '.';
 
 const props = {
@@ -40,6 +40,19 @@ describe('<Posts />', () => {
         render(<Posts />);
         expect(screen.queryByRole('heading', { name: /title/i })).not.toBeInTheDocument();
         expect(screen.queryAllByRole('heading', { name: /title/i })).toHaveLength(0);
+    });
+
+    it('should render search, posts and load more', async () => {
+        render(<Posts />);
+
+        //const { debug } = render(<Posts />);
+        //debug();
+
+        const noMorePosts = screen.getByTest('Nenhum post encontrado');
+
+        await waitForElementToBeRemoved(noMorePosts);
+
+        screen.debug();
     });
 
     it('should match snapshot', () => {
