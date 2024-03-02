@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Posts /> should match snapshot 1`] = `
+<section
+  class="container"
+>
+  <div>
+    <div
+      class="search-container"
+    >
+      <input
+        class="text-input"
+        placeholder="Type of search"
+        type="search"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="posts"
+  >
+    <h3>
+      Nenhum post encontrado :(
+    </h3>
+  </div>
+  <div
+    class="container-button"
+  >
+    <button
+      class="button"
+      disabled=""
+    >
+      Load more posts
+    </button>
+  </div>
+</section>
+`;
