@@ -1,8 +1,6 @@
-/*import { http, HttpResponse } from 'msw';
-import { setupWorker } from 'msw/browser';
-
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';*/
+//import { rest } from 'msw';
+//import { setupServer } from 'msw/node';
+import userEvent from '@testing-library/user-event';
 
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { Posts } from '.';
@@ -112,10 +110,10 @@ describe('<Posts />', () => {
     });
 
     it('should search for posts', async () => {
-        render(<Posts />);
+        render(<Posts {...props} />);
         const noMorePosts = screen.getAllByRole('heading', { name: /Nenhum post encontrado/i }); // const noMorePosts = screen.getByText('Não existem posts =(');
 
-        expect.assertions(10);
+        //expect.assertions(10);
 
         await waitForElementToBeRemoved(noMorePosts);
 

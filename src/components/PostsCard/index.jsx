@@ -13,8 +13,19 @@ export const PostsCard = (props) => {
     );
 };
 
+/*
 PostsCard.propTypes = {
     posts: PropTypes.object.isRequired
+};
+*/
+
+PostsCard.propTypes = {
+    posts: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        cover: PropTypes.string.isRequired,
+        body: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired
+    })
 };
 
 /*
